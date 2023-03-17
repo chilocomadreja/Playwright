@@ -22,7 +22,14 @@ test.only('test', async ({ page }) => {
   await page.getByPlaceholder('Last Name').fill('Marzec');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('textbox', { name: 'Mobile' }).click();
-  await page.getByRole('textbox', { name: 'Mobile' }).fill('666666666')
+  await page.getByRole('textbox', { name: 'Mobile' }).fill('666666666');
+  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+  await page.getByRole('textbox', { name: 'Phone', exact: true }).click();
+  await page.getByRole('textbox', { name: 'Phone', exact: true }).fill('123453434');
+  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+  await page.getByLabel('*Company').click();
+  await page.getByLabel('*Company').fill('Parasole');
+  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
 
 
   
