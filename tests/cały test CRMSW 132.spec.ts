@@ -1,9 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.only('test', async ({ page }) => {
-
-//Arive
-
+test('test', async ({ page }) => {
 
   await page.goto('https://test.salesforce.com/');
   await page.getByLabel('Username').click();
@@ -11,7 +8,6 @@ test.only('test', async ({ page }) => {
   await page.getByLabel('Password').fill('Clorce9@');
   await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
 
-  //Act
 
   await page.getByRole('link', { name: 'Leads' }).click();
   await page.getByRole('button', { name: 'New' }).click();
@@ -34,41 +30,36 @@ test.only('test', async ({ page }) => {
   await page.getByLabel('*Company').click();
   await page.getByLabel('*Company').fill('Parasole');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-
-  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('textbox', { name: 'Email', exact: true }).click();
   await page.getByRole('textbox', { name: 'Email', exact: true }).fill('test@clorce.com');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  await page.getByLabel('REGON').click();  
+  await page.getByLabel('REGON').click();
   await page.getByLabel('REGON').fill('12345');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  await page.getByLabel('KRS').click();
+  //await page.getByLabel('KRS').click();
   await page.getByLabel('KRS').fill('1234');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  await page.getByLabel('NIP').click();
+  //await page.getByLabel('NIP').click();
   await page.getByLabel('NIP').fill('1234');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  await page.getByLabel('Comment').click();
+  //await page.getByLabel('Comment').click();
   await page.getByLabel('Comment').fill('To jest test');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('combobox', { name: 'Store type, --None--' }).click();
   await page.getByTitle('SPAR', { exact: true }).click();
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('combobox', { name: 'Type of potential customer, --None--' }).click();
-  await page.getByText('Parcel').click();
+  await page.getByText('Local').click();
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('combobox', { name: 'Rejection reason, --None--' }).click();
-  await page.getByText('Small/No parking').click();
-  //await page.getByRole('combobox', { name: 'Rejection reason, Too small' }).click();
-  // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  // await page.getByRole('combobox', { name: 'Logistics warehouse, --None--' }).click();
-  // await page.getByText('Czeladź').click();
-  // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-
-
-  //Asert
+  await page.getByRole('combobox', { name: 'Rejection reason, Too small' }).click();
+  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+  await page.getByRole('combobox', { name: 'Logistics warehouse, --None--' }).click();
+  await page.getByText('Czeladź').click();
+  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
 
 
 
 
+  
 });
