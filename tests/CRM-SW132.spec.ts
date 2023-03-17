@@ -59,10 +59,10 @@ test.only('test', async ({ page }) => {
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('combobox', { name: 'Rejection reason, --None--' }).click();
   await page.getByText('Small/No parking').click();
-  //await page.getByRole('combobox', { name: 'Rejection reason, Too small' }).click();
-  // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  // await page.getByRole('combobox', { name: 'Logistics warehouse, --None--' }).click();
-  // await page.getByText('Czeladź').click();
+
+   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+   await page.getByRole('combobox', { name: 'Logistics warehouse, --None--' }).click();
+   await page.getByText('Czeladź').click();
   // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
 
 
