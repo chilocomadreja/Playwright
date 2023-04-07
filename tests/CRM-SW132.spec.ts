@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test.only('test', async ({ page }) => {
   
   //Arrange
 
@@ -148,13 +148,14 @@ test('test', async ({ page }) => {
   await page.getByLabel('Alcohol concession').check();
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page
-    .getByRole('combobox', { name: 'Financial resources, --None--' })
-    .click();
-  await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-  await page
-    .getByRole('combobox', { name: 'Financial resources, Mix' })
-    .click();
-
+  //   .getByRole('combobox', { name: 'Financial resources, --None--' })
+  //   .click();
+  // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+  // await page
+  //   .getByRole('combobox', { name: 'Financial resources, Mix' })
+  //   .click({force: true});
+  //   //await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+  //   await page.getByText('Own', { exact: true }).click();
     ///Assert
 
     
