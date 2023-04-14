@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test.only('test', async ({ page }) => {
+test('test', async ({ page }) => {
+
   
   //Arrange
 
@@ -158,5 +159,11 @@ test.only('test', async ({ page }) => {
   //   await page.getByText('Own', { exact: true }).click();
     ///Assert
 
-    
+    await page.getByRole('combobox', { name: 'Province, --None--' }).click();
+    await page.getByText('Województwo lubuskie').click();
+    await page.getByPlaceholder('Search Address').click();
+     await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+    // await page.getByRole('option', { name: 'Wrocław Poland' }).getByText('Wroc').click();
+    // await page.locator('records-modal-lwc-detail-panel-wrapper').click();
+    // await page.locator('records-record-layout-row').filter({ hasText: 'ProvinceWojewództwo dolnośląskie--None--Województwo dolnośląskieWojewództwo kuja' }).locator('records-record-layout-item').nth(1).click();
 });

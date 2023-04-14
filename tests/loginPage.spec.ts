@@ -1,17 +1,47 @@
 import { test, expect } from '@playwright/test';
 
-test('Login page', async ({ page }) => {
-  await page.goto('https://test.salesforce.com/');
-  await page.getByLabel('Username').click();
-  await page.getByLabel('Username').fill('admin-bvrm@force.com.sebamaboxa');
-  await page.getByLabel('Password').click();
-  await page.getByLabel('Password').fill('Clorce9@');
-  await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-  await page.goto(
-    'https://spar--preprod.sandbox.lightning.force.com/lightning/page/home'
-  );
+test.describe.parallel('Login / logout Flow', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('https://test.salesforce.com/');
+  });
+
+  test('Show error message', async ({ page }) => {
+    await page.click('text=Log In to Sandbox');
+
+    await page.click('text=Log In to Sandbox');
+  });
+
+  test('Negative scenario', async ({ page }) => {
+    await page.click('text=Log In to Sandbox');
+    await page.type('#username', 'invalid username');
+    await page.type('#password', 'invalid password');
+    await page.click('text=Log In to Sandbox');
+
+    const ErrorMessage = await page.locator('#error');
+    await expect(ErrorMessage).toContainText(
+      "Please check your username and password. If you still can't log in, contact your Salesforce administrator."
+    );
+  });
+
+  test('Positive scenario', async ({ page }) => {
+    await page.click('text=Log In to Sandbox');
+    await page.type('#username', 'admin-bvrm@force.com.sebamaboxa');
+    await page.type('#password', 'Clorce9@');
+    await page.click('text=Log In to Sandbox');
+
+    const icon = await page.locator('.branding-userProfile-button');
+    await expect(page).toHaveURL(
+      'https://spar6--sebamaboxa.sandbox.lightning.force.com/one/one.app'
+    );
+
+    await expect(icon).toBeVisible({ timeout: 80000 });
+    await page.click('.branding-userProfile-button');
+    await page.click('.profile-link-label.logout.uiOutputURL');
+    await expect(page).toHaveURL(
+      'https://spar6--sebamaboxa.sandbox.my.salesforce.com/'
+    );
+
+    
+  });
+
 });
-
-
-
-
