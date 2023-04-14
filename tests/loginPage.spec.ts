@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Login / logout Flow', () => {
+test.describe.parallel('Login to sandbox', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://test.salesforce.com/');
   });
