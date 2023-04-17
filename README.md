@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Test Automation training from jaktestowac.pl
 
 This is a Test Automation project based on `Playwright` and `TypeScript`.  
@@ -261,3 +262,6 @@ Then use page in tests:
 =======
 # Playwright
 >>>>>>> f53b628dbebdf720262cfa37b73526e692203aa7
+=======
+# Playwright
+>>>>>>> 837a91abe21e9932c23ea2c90f3552b70d1cdc58
