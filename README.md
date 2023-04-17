@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Test Automation training from jaktestowac.pl
 
 This is a Test Automation project based on `Playwright` and `TypeScript`.  
@@ -257,3 +258,6 @@ Then use page in tests:
     const loginPage = new LoginPage(page)
     await loginPage.login(userId, userPassword)
 ```
+=======
+# Playwright
+>>>>>>> f53b628dbebdf720262cfa37b73526e692203aa7
