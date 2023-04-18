@@ -14,7 +14,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Accounts' }).click();
+    await page.getByRole('link', { name: 'Konta' }).click();
     await page.locator('one-appnav').click();
 
     ///Assert
@@ -31,7 +31,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Accounts' }).click();
+    await page.getByRole('link', { name: 'Kontakty' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -46,7 +46,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Leads' }).click();
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -63,7 +63,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Opportunities' }).click();
+    await page.getByRole('link', { name: 'Klienci w procesie' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -78,7 +78,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Tasks' }).click();
+    await page.getByRole('link', { name: 'Zadania' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -93,7 +93,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Calendar' }).click();
+    await page.getByRole('link', { name: 'Kalendarz' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -108,7 +108,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Dashboards' }).click();
+    await page.getByRole('link', { name: 'Pulpity' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -124,7 +124,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Reports' }).click();
+    await page.getByRole('link', { name: 'Raporty' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -140,7 +140,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Notes' }).click();
+    await page.getByRole('link', { name: 'Notatki' }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -156,7 +156,7 @@ test.describe('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Groups' }).click();
+    await page.getByRole('link', { name: 'Grupy' }).click();
     await page.locator('one-appnav').click();
   });
 });
