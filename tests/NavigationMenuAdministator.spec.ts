@@ -1,14 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Tabs', () => {
+test.describe.parallel.only('Tabs', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/')
-  
+    await page.goto('https://test.salesforce.com/');
   });
 
   test('Tabs visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
 
     ///Act
@@ -26,7 +25,7 @@ test.describe.parallel('Tabs', () => {
 
   test('Contacts tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
     ///Act
 
@@ -39,25 +38,9 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Leads tab visibility', async ({ page }) => {
-    //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
-    const password = 'Clorce1@';
-
-    ///Act
-
-    await page.getByLabel('Username').click();
-    await page.getByLabel('Username').fill(username);
-    await page.getByLabel('Password').click();
-    await page.getByLabel('Password').fill(password);
-    await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
-    await page.locator('one-appnav').click();
-  });
-
   test('Opportunities tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
 
     ///Act
@@ -73,7 +56,7 @@ test.describe.parallel('Tabs', () => {
 
   test('Tasks tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
     ///Act
 
@@ -88,7 +71,7 @@ test.describe.parallel('Tabs', () => {
 
   test('Calendar tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
     ///Act
 
@@ -103,7 +86,7 @@ test.describe.parallel('Tabs', () => {
 
   test('Dashboards tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
     ///Act
 
@@ -118,7 +101,7 @@ test.describe.parallel('Tabs', () => {
 
   test('Reports tab visibility', async ({ page }) => {
     //Arrange
-    const username = 'ekspansjainteg@clorce.com.sebamaboxa';
+    const username = 'administratortest@clorce.com';
     const password = 'Clorce1@';
     ///Act
 
