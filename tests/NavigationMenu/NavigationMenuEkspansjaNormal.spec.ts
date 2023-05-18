@@ -5,7 +5,7 @@ test.describe.parallel('Tabs', () => {
     await page.goto('https://test.salesforce.com/');
 
     await page.click('text=Log In to Sandbox');
-    await page.type('#username', 'editdelete@clorce.s');
+    await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce1@');
     await page.click('text=Log In to Sandbox');
   });

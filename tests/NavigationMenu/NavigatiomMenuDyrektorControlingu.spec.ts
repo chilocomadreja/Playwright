@@ -5,38 +5,40 @@ test.describe.parallel('Tabs', () => {
     await page.goto('https://test.salesforce.com/');
 
     await page.click('text=Log In to Sandbox');
-    await page.type('#username', 'finanseinteg@clorce.com.sebamaboxa');
+    await page.type('#username', 'dyrektorcontrolingu@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce1@');
     await page.click('text=Log In to Sandbox');
   });
 
-  test('Accounts visibility', async ({ page }) => {
+  test('Tabs visibility', async ({ page }) => {
     await page.click('text=Konta');
     await page.locator('one-appnav').click();
-  });
 
-  test('Invoices tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Faktury' }).click();
-    await page.locator('one-appnav').click();
-  });
-
-  test('Import faktur tab visibility', async ({ page }) => {
-    await page.click('text=Import faktur');
-    await page.locator('one-appnav').click();
+    ///Assert
   });
 
   test('Contacts tab visibility', async ({ page }) => {
-    await page.click('text=Kontakty');
+    await page.getByRole('link', { name: 'Kontakty' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Purchase Orders tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Zamówienia SPAR' }).click();
+  test('Opportunities tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Klienci w procesie' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Approval Requests tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Prośby o zatwierdzenie' }).click();
+  test('Tasks tab visibility', async ({ page }) => {
+    await page.click('text=Zadania');
+    await page.locator('one-appnav').click();
+  });
+
+  test('Calendar tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Kalendarz' }).click();
+    await page.locator('one-appnav').click();
+  });
+
+  test('Dashboards tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Pulpity' }).click();
     await page.locator('one-appnav').click();
   });
 

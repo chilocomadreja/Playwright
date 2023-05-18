@@ -5,20 +5,23 @@ test.describe.parallel('Tabs', () => {
     await page.goto('https://test.salesforce.com/');
 
     await page.click('text=Log In to Sandbox');
-    await page.type('#username', 'administratortest@clorce.com');
-    await page.type('#password', 'Clorce1@');
+    await page.type('#username', 'ekspansjadeleteb2b@clorce.com.sebamaboxa');
+    await page.type('#password', 'Clorce2@');
     await page.click('text=Log In to Sandbox');
   });
 
   test('Tabs visibility', async ({ page }) => {
     await page.click('text=Konta');
     await page.locator('one-appnav').click();
-
-    ///Assert
   });
 
   test('Contacts tab visibility', async ({ page }) => {
     await page.getByRole('link', { name: 'Kontakty' }).click();
+    await page.locator('one-appnav').click();
+  });
+
+  test('Leads tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.locator('one-appnav').click();
   });
 
