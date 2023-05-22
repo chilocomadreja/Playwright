@@ -13,8 +13,6 @@ test.describe.parallel('Tabs', () => {
   test('Tabs visibility', async ({ page }) => {
     await page.click('text=Konta');
     await page.locator('one-appnav').click();
-
-    ///Assert
   });
 
   test('Contacts tab visibility', async ({ page }) => {

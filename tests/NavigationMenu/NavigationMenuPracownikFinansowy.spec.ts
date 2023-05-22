@@ -11,7 +11,7 @@ test.describe.parallel('Tabs', () => {
   });
 
   test('Accounts visibility', async ({ page }) => {
-    await page.click('text=Konta');
+    await page.getByRole('link', { name: 'Konta', exact: true }).click();
     await page.locator('one-appnav').click();
   });
 
@@ -21,12 +21,12 @@ test.describe.parallel('Tabs', () => {
   });
 
   test('Import faktur tab visibility', async ({ page }) => {
-    await page.click('text=Import faktur');
+    await page.getByRole('link', { name: 'Import faktur' }).click();
     await page.locator('one-appnav').click();
   });
 
   test('Contacts tab visibility', async ({ page }) => {
-    await page.click('text=Kontakty');
+    await page.getByRole('link', { name: 'Kontakty' }).click();
     await page.locator('one-appnav').click();
   });
 
