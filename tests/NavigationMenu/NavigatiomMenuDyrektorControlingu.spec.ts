@@ -10,35 +10,33 @@ test.describe.parallel('Tabs', () => {
     await page.click('text=Log In to Sandbox');
   });
 
-  test('Tabs visibility', async ({ page }) => {
+  test('Accounts visibility', async ({ page }) => {
     await page.click('text=Konta');
     await page.locator('one-appnav').click();
+  });
 
-    ///Assert
+  test('Invoices tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Faktury' }).click();
+    await page.locator('one-appnav').click();
+  });
+
+  test('Import faktur tab visibility', async ({ page }) => {
+    await page.click('text=Import faktur');
+    await page.locator('one-appnav').click();
   });
 
   test('Contacts tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Kontakty' }).click();
+    await page.click('text=Kontakty');
     await page.locator('one-appnav').click();
   });
 
-  test('Opportunities tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Klienci w procesie' }).click();
+  test('Purchase Orders tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Zamówienia SPAR' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Tasks tab visibility', async ({ page }) => {
-    await page.click('text=Zadania');
-    await page.locator('one-appnav').click();
-  });
-
-  test('Calendar tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Kalendarz' }).click();
-    await page.locator('one-appnav').click();
-  });
-
-  test('Dashboards tab visibility', async ({ page }) => {
-    await page.getByRole('link', { name: 'Pulpity' }).click();
+  test('Approval Requests tab visibility', async ({ page }) => {
+    await page.getByRole('link', { name: 'Prośby o zatwierdzenie' }).click();
     await page.locator('one-appnav').click();
   });
 

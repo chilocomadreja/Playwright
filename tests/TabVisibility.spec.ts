@@ -8,7 +8,7 @@ test.describe.parallel('Tabs', () => {
   test('Tabs visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
 
     ///Act
 
@@ -26,7 +26,7 @@ test.describe.parallel('Tabs', () => {
   test('Contacts tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
     ///Act
 
     await page.getByLabel('Username').click();
@@ -41,7 +41,7 @@ test.describe.parallel('Tabs', () => {
   test('Leads tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
 
     ///Act
 
@@ -57,7 +57,7 @@ test.describe.parallel('Tabs', () => {
   test('Opportunities tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
 
     ///Act
 
@@ -73,7 +73,7 @@ test.describe.parallel('Tabs', () => {
   test('Tasks tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
     ///Act
 
     await page.getByLabel('Username').click();
@@ -81,14 +81,14 @@ test.describe.parallel('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.click('text=Zadania');
+    await page.getByRole('link', { name: 'Zadania', exact: true }).click();
     await page.locator('one-appnav').click();
   });
 
   test('Calendar tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
     ///Act
 
     await page.getByLabel('Username').click();
@@ -96,14 +96,14 @@ test.describe.parallel('Tabs', () => {
     await page.getByLabel('Password').click();
     await page.getByLabel('Password').fill(password);
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
-    await page.getByRole('link', { name: 'Kalendarz' }).click();
+    await page.getByRole('link', { name: 'Kalendarz', exact: true }).click();
     await page.locator('one-appnav').click();
   });
 
   test('Dashboards tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
     ///Act
 
     await page.getByLabel('Username').click();
@@ -118,7 +118,7 @@ test.describe.parallel('Tabs', () => {
   test('Reports tab visibility', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
-    const password = 'Clorce9@';
+    const password = 'Clorce5@';
     ///Act
 
     await page.getByLabel('Username').click();

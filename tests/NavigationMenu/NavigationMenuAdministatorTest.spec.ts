@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Tabs', () => {
+test.describe.parallel.only('Tabs', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://test.salesforce.com/');
 

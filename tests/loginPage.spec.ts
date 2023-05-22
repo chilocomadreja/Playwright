@@ -26,7 +26,7 @@ test.describe.parallel('Login to sandbox', () => {
   test('Positive scenario', async ({ page }) => {
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'admin-bvrm@force.com.sebamaboxa');
-    await page.type('#password', 'Clorce9@');
+    await page.type('#password', 'Clorce5@');
     await page.click('text=Log In to Sandbox');
 
     const icon = await page.locator('.branding-userProfile-button');
