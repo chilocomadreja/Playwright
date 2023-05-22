@@ -24,3 +24,4 @@ test.describe.parallel('Tabs', () => {
   await page.getByRole('link', { name: 'Raporty' }).click();
   await page.getByRole('link', { name: 'Strona główna' }).click();
 });
+});
