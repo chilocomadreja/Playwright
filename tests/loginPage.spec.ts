@@ -31,14 +31,14 @@ test.describe.parallel('Login to sandbox', () => {
 
     const icon = await page.locator('.branding-userProfile-button');
     await expect(page).toHaveURL(
-      'https://spar6--sebamaboxa.sandbox.lightning.force.com/one/one.app'
+      'https://spar--sebamaboxa.sandbox.lightning.force.com/lightning/page/home'
     );
 
     await expect(icon).toBeVisible({ timeout: 80000 });
     await page.click('.branding-userProfile-button');
     await page.click('.profile-link-label.logout.uiOutputURL');
     await expect(page).toHaveURL(
-      'https://spar6--sebamaboxa.sandbox.my.salesforce.com/'
+      'https://spar--sebamaboxa.sandbox.my.salesforce.com/'
     );
 
     
