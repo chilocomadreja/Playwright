@@ -13,37 +13,37 @@ test.describe.parallel('Menu: Sprzedaz', () => {
     await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
   });
 
-  test('Accounts visibility', async ({ page }) => {
+  test('Accounts', async ({ page }) => {
     await page.getByRole('link', { name: 'Konta', exact: true }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Contacts tab visibility', async ({ page }) => {
+  test('Contacts', async ({ page }) => {
     await page.getByRole('link', { name: 'Kontakty' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Opportunities tab visibility', async ({ page }) => {
+  test('Opportunities', async ({ page }) => {
     await page.getByRole('link', { name: 'Klienci w procesie' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Tasks tab visibility', async ({ page }) => {
+  test('Tasks', async ({ page }) => {
     await page.click('text=Zadania');
     await page.locator('one-appnav').click();
   });
 
-  test('Calendar tab visibility', async ({ page }) => {
+  test('Calendar', async ({ page }) => {
     await page.getByRole('link', { name: 'Kalendarz' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Dashboards tab visibility', async ({ page }) => {
+  test('Dashboards', async ({ page }) => {
     await page.getByRole('link', { name: 'Pulpity' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Reports tab visibility', async ({ page }) => {
+  test('Reports', async ({ page }) => {
     await page.getByRole('link', { name: 'Raporty' }).click();
     await page.locator('one-appnav').click();
   });
