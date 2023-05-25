@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Tabs', () => {
+test.describe.parallel('Menu: Finanse', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://test.salesforce.com/');
 
@@ -10,37 +10,37 @@ test.describe.parallel('Tabs', () => {
     await page.click('text=Log In to Sandbox');
   });
 
-  test('Accounts visibility', async ({ page }) => {
+  test('Accounts', async ({ page }) => {
     await page.click('text=Konta');
     await page.locator('one-appnav').click();
   });
 
-  test('Invoices tab visibility', async ({ page }) => {
+  test('Invoices', async ({ page }) => {
     await page.getByRole('link', { name: 'Faktury' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Import faktur tab visibility', async ({ page }) => {
+  test('Import faktur', async ({ page }) => {
     await page.click('text=Import faktur');
     await page.locator('one-appnav').click();
   });
 
-  test('Contacts tab visibility', async ({ page }) => {
+  test('Contacts', async ({ page }) => {
     await page.click('text=Kontakty');
     await page.locator('one-appnav').click();
   });
 
-  test('Purchase Orders tab visibility', async ({ page }) => {
+  test('Purchase Orders', async ({ page }) => {
     await page.getByRole('link', { name: 'Zamówienia SPAR' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Approval Requests tab visibility', async ({ page }) => {
+  test('Approval Requests', async ({ page }) => {
     await page.getByRole('link', { name: 'Prośby o zatwierdzenie' }).click();
     await page.locator('one-appnav').click();
   });
 
-  test('Reports tab visibility', async ({ page }) => {
+  test('Reports', async ({ page }) => {
     await page.getByRole('link', { name: 'Raporty' }).click();
     await page.locator('one-appnav').click();
   });
