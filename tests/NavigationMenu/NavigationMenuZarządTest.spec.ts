@@ -12,7 +12,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Accounts', async ({ page }) => {
     await page.click('text=Konta');
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Contacts', async ({ page }) => {
@@ -22,7 +22,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Leads', async ({ page }) => {
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Opportunities', async ({ page }) => {

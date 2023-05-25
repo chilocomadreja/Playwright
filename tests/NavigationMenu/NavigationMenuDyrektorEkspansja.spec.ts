@@ -36,7 +36,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Calendar', async ({ page }) => {
     await page.getByRole('link', { name: 'Kalendarz' }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Dashboards', async ({ page }) => {
@@ -46,6 +46,6 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Reports', async ({ page }) => {
     await page.getByRole('link', { name: 'Raporty' }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 });

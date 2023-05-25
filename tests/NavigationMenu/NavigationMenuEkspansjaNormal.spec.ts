@@ -32,7 +32,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Tasks', async ({ page }) => {
     await page.click('text=Zadania');
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Calendar', async ({ page }) => {

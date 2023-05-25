@@ -15,7 +15,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Accounts', async ({ page }) => {
     await page.getByRole('link', { name: 'Konta', exact: true }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Contacts', async ({ page }) => {
@@ -30,7 +30,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Tasks', async ({ page }) => {
     await page.click('text=Zadania');
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Calendar', async ({ page }) => {

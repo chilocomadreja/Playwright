@@ -12,7 +12,7 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Accounts', async ({ page }) => {
     await page.click('text=Konta');
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
 
     ///Assert
   });

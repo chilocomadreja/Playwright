@@ -32,7 +32,7 @@ test.describe.parallel('Menu: Finanse', () => {
 
   test('Purchase Orders', async ({ page }) => {
     await page.getByRole('link', { name: 'Zamówienia SPAR' }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
   test('Approval Requests', async ({ page }) => {

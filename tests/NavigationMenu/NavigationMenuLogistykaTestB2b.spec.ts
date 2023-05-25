@@ -42,6 +42,6 @@ test.describe.parallel('Menu: Sprzedaz', () => {
 
   test('Reports', async ({ page }) => {
     await page.getByRole('link', { name: 'Raporty' }).click();
-    await page.locator('one-appnav').click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 });

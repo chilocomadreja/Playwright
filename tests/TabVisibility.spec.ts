@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Tabs', () => {
+test.describe.parallel('Menu Sprzedaz', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://test.salesforce.com/');
   });
 
-  test('Tabs visibility', async ({ page }) => {
+  test('Accounts', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -23,7 +23,7 @@ test.describe.parallel('Tabs', () => {
     ///Assert
   });
 
-  test('Contacts tab visibility', async ({ page }) => {
+  test('Contacts', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -38,7 +38,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Leads tab visibility', async ({ page }) => {
+  test('Leads', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -54,7 +54,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Opportunities tab visibility', async ({ page }) => {
+  test('Opportunities', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -70,7 +70,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Tasks tab visibility', async ({ page }) => {
+  test('Tasks', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -85,7 +85,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Calendar tab visibility', async ({ page }) => {
+  test('Calendar', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -100,7 +100,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Dashboards tab visibility', async ({ page }) => {
+  test('Dashboards', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
@@ -115,7 +115,7 @@ test.describe.parallel('Tabs', () => {
     await page.locator('one-appnav').click();
   });
 
-  test('Reports tab visibility', async ({ page }) => {
+  test('Reports', async ({ page }) => {
     //Arrange
     const username = 'admin-bvrm@force.com.sebamaboxa';
     const password = 'Clorce5@';
