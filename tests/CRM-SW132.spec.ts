@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test.only('test', async ({ page }) => {
 
   
   //Arrange
 
   const url = 'https://test.salesforce.com/';
   const login = 'admin-bvrm@force.com.sebamaboxa';
-  const password = 'Clorce9@';
+  const password = 'Clorce5@';
   const projectNumber = '1234567';
   const firstName = 'Sebastian';
   const lastName = 'Marzec';
