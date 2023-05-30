@@ -17,4 +17,7 @@ test('weryfikacja PS - Delete records- mozliwosc usuniecia nieswojego rekordu', 
   await page.click('text=Margarita Lenowo');
   await page.click('text=Usuń');
   await page.click("//span[contains(text(),'Usuń')]");
+
+  const komunikat2 = 'Wystąpił problem podczas zapisywania tego rekordu. Możliwe, że nie masz uprawnień do jego edycji lub został on usunięty lub zarchiwizowany. Skontaktuj się z administratorem, aby uzyskać pomoc..';
+  expect(komunikat2).toContain('Wystąpił problem podczas zapisywania tego rekordu. Możliwe, że nie masz uprawnień do jego edycji lub został on usunięty lub zarchiwizowany. Skontaktuj się z administratorem, aby uzyskać pomoc..');
 });
