@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('weryfikacja PS - Data entry basic user - tworzenie leada', async ({
+test('weryfikacja uzupelnienia wymaganych pol na Formularzu tworzenia', async ({
   page,
 }) => {
   const url = 'https://test.salesforce.com/';

@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('weryfikacja PS - Delete records- mozliwosc usuniecia leada', async ({
+test('weryfikacja PS - Delete records- mozliwosc usuniecia nieswojego rekordu', async ({
   page,
 }) => {
   const url = 'https://test.salesforce.com/';
