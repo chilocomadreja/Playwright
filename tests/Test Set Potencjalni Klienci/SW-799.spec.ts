@@ -68,5 +68,21 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page.getByText('Czeladź').click();
   ///Kontakt dodatkowy
 
+  ///Lokalizacja
+  await page.getByLabel('Powierzchnia działki (m2)').fill('22');
+  await page.getByLabel('Powierzchnia do zabudowy (m2)').fill('10');
+  await page.getByLabel('Powierzchnia sklepu brutto (m2)').fill('3');
+  await page.getByLabel('Powierzchnia sali sprzedaży (m2)').fill('4');
+  await page.getByLabel('Problem z dostępem / wyjściem').isChecked();
+  await page.getByLabel('Parking', { exact: true }).fill('tak');
   
+/// Ocena punktowa
+await page.getByLabel('Bezpośredni zjazd z drogi głównej').isChecked();
+await page.getByLabel('Doświadczony w FCMG?').isChecked();
+await page.getByRole('combobox', { name: 'Konkurencja w najbliższych 500m, --Brak--' }).click();
+//await page.getByRole('combobox', { name: 'Konkurencja w najbliższych 500m, 1' }).click();
+await page.getByRole('combobox', { name: 'Miejsca parkingowe, 3-5' }).click();
+await page.getByLabel('Koncesja na alkohol').isChecked();
+await page.getByRole('combobox', { name: 'Środki finansowe, --Brak--' }).click();
+//await page.getByRole('combobox', { name: 'Środki finansowe, Własne' }).click();
 });
