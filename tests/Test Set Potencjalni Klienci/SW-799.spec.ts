@@ -15,16 +15,6 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   const krs = '1234';
   const nip = '1234';
   const comment = 'To jest test';
-  const firstName2 = 'Tomasz';
-  const lastName2 = 'Lis';
-  const phone2 = '66677888';
-  const email2 = 'test@xx.com';
-  const salesFloorArena = '6';
-  const firstName3 = 'Karol';
-  const lastName3 = 'Kos';
-  const phone3 = '36677883';
-  const email3 = 'test2@xx.com';
-  const plotArena = '1';
 
   await page.goto(url);
   await page.getByLabel('Username').click();
@@ -74,15 +64,43 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page.getByLabel('Powierzchnia sklepu brutto (m2)').fill('3');
   await page.getByLabel('Powierzchnia sali sprzedaży (m2)').fill('4');
   await page.getByLabel('Problem z dostępem / wyjściem').isChecked();
-  await page.getByLabel('Parking', { exact: true }).fill('tak');
-  
-/// Ocena punktowa
-await page.getByLabel('Bezpośredni zjazd z drogi głównej').isChecked();
-await page.getByLabel('Doświadczony w FCMG?').isChecked();
-await page.getByRole('combobox', { name: 'Konkurencja w najbliższych 500m, --Brak--' }).click();
-//await page.getByRole('combobox', { name: 'Konkurencja w najbliższych 500m, 1' }).click();
-await page.getByRole('combobox', { name: 'Miejsca parkingowe, 3-5' }).click();
-await page.getByLabel('Koncesja na alkohol').isChecked();
-await page.getByRole('combobox', { name: 'Środki finansowe, --Brak--' }).click();
-//await page.getByRole('combobox', { name: 'Środki finansowe, Własne' }).click();
+  await page.getByLabel('Parking', { exact: true }).fill('1');
+
+  /// Ocena punktowa
+  await page.getByLabel('Bezpośredni zjazd z drogi głównej').isChecked();
+  await page.getByLabel('Doświadczony w FCMG?').isChecked();
+  await page
+    .getByRole('combobox', {
+      name: 'Konkurencja w najbliższych 500m, --Brak--',
+    })
+    .click();
+  //await page.getByRole('combobox', { name: 'Konkurencja w najbliższych 500m, 1' }).click();
+  await page.getByRole('combobox', { name: 'Miejsca parkingowe, 3-5' }).click();
+  await page.getByLabel('Koncesja na alkohol').isChecked();
+  await page
+    .getByRole('combobox', { name: 'Środki finansowe, --Brak--' })
+    .click();
+  //await page.getByRole('combobox', { name: 'Środki finansowe, Własne' }).click();
+
+  ///Informacje adresowe
+  await page.getByRole('combobox', { name: 'Województwo, --Brak--' }).click();
+  await page.getByText('Województwo lubuskie').click();
+  await page.getByLabel('Ulica').fill('cos');
+  await page.getByLabel('Kod pocztowy').fill('31-444');
+  await page.getByLabel('Miasto').fill('Lublin');
+  await page.getByLabel('Województwo', { exact: true }).fill('lubuskie');
+  await page.getByLabel('Kraj').fill('Polska');
+  await page.getByLabel('Koordynaty działki').fill('dzialka');
+  ///Informacje dodatkowe
+  await page.getByLabel('Liczba pracowników').fill('3');
+  await page.getByLabel('Przychód roczny').fill('3');
+  await page.getByLabel('Strona Facebook').fill('www.facebook.com');
+  await page.getByLabel('Witryna').fill('www.w.com');
+  await page.getByLabel('Strona Instagram').fill('www.instagram.com');
+  await page
+    .getByRole('combobox', { name: 'Źródło potencjalnego klienta, --Brak--' })
+    .click();
+  await page.getByRole('combobox', { name: 'Branża, --Brak--' }).click();
+  await page.getByLabel('Opis').fill('lol');
+  await page.getByRole('button', { name: 'Zapisz', exact: true }).click();
 });
