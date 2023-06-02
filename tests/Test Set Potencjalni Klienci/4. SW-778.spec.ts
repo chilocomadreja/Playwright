@@ -4,8 +4,8 @@ test('weryfikacja PS - Delete records- mozliwosc usuniecia nieswojego rekordu', 
   page,
 }) => {
   const url = 'https://test.salesforce.com/';
-  const login = 'ekspansjadeleteb2b@clorce.com.sebamaboxa';
-  const password = 'Clorce3@';
+  const login = 'ekspansjanormal@clorce.com.sebamaboxa';
+  const password = 'Clorce2@';
 
   await page.goto(url);
   await page.getByLabel('Username').click();
@@ -18,8 +18,10 @@ test('weryfikacja PS - Delete records- mozliwosc usuniecia nieswojego rekordu', 
   await page.getByRole('link', { name: 'Sebastian Marzec' }).click();
   //await page.click('text=Usuń');
   await page.getByRole('button', { name: 'Usuń' }).click();
-  //await page.click("//span[contains(text(),'Usuń')]");
-  await page.getByRole('button', { name: 'Usuń' }).click();
+  await page.click("//span[contains(text(),'Usuń')]");
+  //await page.getByRole('button', { name: 'Usuń' }).click();
 
   ////dodanie asercji sprawdzającej czy usunęło
+  //const komunikat3 = 'Sebastian Marzec';
+ // expect(komunikat3).toContain('Sebastian Marzec');
 });
