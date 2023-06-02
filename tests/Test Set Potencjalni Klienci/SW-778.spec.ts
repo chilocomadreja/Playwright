@@ -14,10 +14,12 @@ test('weryfikacja PS - Delete records- mozliwosc usuniecia nieswojego rekordu', 
   await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
   await page.click('text=Potencjalni klienci');
   ///nazwa leada musi być zawsze taka sama. Lead musi być wcześniej utworzony!!!!
-  await page.click('text=Margarita Lenowo');
-  await page.click('text=Usuń');
-  await page.click("//span[contains(text(),'Usuń')]");
+  ///await page.click('text=Parasole');
+  await page.getByRole('link', { name: 'Sebastian Marzec' }).click();
+  //await page.click('text=Usuń');
+  await page.getByRole('button', { name: 'Usuń' }).click();
+  //await page.click("//span[contains(text(),'Usuń')]");
+  await page.getByRole('button', { name: 'Usuń' }).click();
 
-  const komunikat2 = 'Wystąpił problem podczas zapisywania tego rekordu. Możliwe, że nie masz uprawnień do jego edycji lub został on usunięty lub zarchiwizowany. Skontaktuj się z administratorem, aby uzyskać pomoc..';
-  expect(komunikat2).toContain('Wystąpił problem podczas zapisywania tego rekordu. Możliwe, że nie masz uprawnień do jego edycji lub został on usunięty lub zarchiwizowany. Skontaktuj się z administratorem, aby uzyskać pomoc..');
+  ////dodanie asercji sprawdzającej czy usunęło
 });
