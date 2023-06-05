@@ -147,7 +147,7 @@ To quickly evaluate code use `DEBUG CONSOLE`.
 - `locator` i.e. `locator('#some-id')` (with `css` selector) for element with attribute `id="some-id"`
 
 ## Other
-
+https://whatismyviewport.com/ - wielkość wyświetlacza tu można sprawdzić i podać do testu
 ### Chrome
 
 - use English version!
