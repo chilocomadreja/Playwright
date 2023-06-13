@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Menu: Sprzedaz', () => {
+test.describe.parallel('Menu: Finanse', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://test.salesforce.com/');
 
@@ -15,33 +15,33 @@ test.describe.parallel('Menu: Sprzedaz', () => {
     await page.locator('one-appnav').click();
   });
 
+  test('Invoices', async ({ page }) => {
+    await page.getByRole('link', { name: 'Faktury' }).click();
+    await page.locator('one-appnav').click();
+  });
+
+  test('Import faktur', async ({ page }) => {
+    await page.click('text=Import faktur');
+    await page.locator('one-appnav').click();
+  });
+
   test('Contacts', async ({ page }) => {
-    await page.getByRole('link', { name: 'Kontakty' }).click();
+    await page.click('text=Kontakty');
     await page.locator('one-appnav').click();
   });
 
-  test('Opportunities', async ({ page }) => {
-    await page.getByRole('link', { name: 'Klienci w procesie' }).click();
-    await page.locator('one-appnav').click();
+  test('Purchase Orders', async ({ page }) => {
+    await page.getByRole('link', { name: 'Zamówienia SPAR' }).click();
+    await page.locator('one-appnav').click({ timeout: 80000 });
   });
 
-  test('Tasks', async ({ page }) => {
-    await page.click('text=Zadania');
-    await page.locator('one-appnav').click();
-  });
-
-  test('Calendar', async ({ page }) => {
-    await page.getByRole('link', { name: 'Kalendarz' }).click();
-    await page.locator('one-appnav').click();
-  });
-
-  test('Dashboards', async ({ page }) => {
-    await page.getByRole('link', { name: 'Pulpity' }).click();
+  test('Approval Requests', async ({ page }) => {
+    await page.getByRole('link', { name: 'Prośby o zatwierdzenie' }).click();
     await page.locator('one-appnav').click();
   });
 
   test('Reports', async ({ page }) => {
     await page.getByRole('link', { name: 'Raporty' }).click();
-    await page.locator('one-appnav').click({ timeout: 80000 });
+    await page.locator('one-appnav').click();
   });
 });

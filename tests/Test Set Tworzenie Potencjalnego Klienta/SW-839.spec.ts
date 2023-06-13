@@ -1,13 +1,19 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('CRM- Stworzenie Potencjalnego Klienta', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+test('weryfikacja', async ({
+    page,
+  }) => {
+    const url = 'https://test.salesforce.com/';
+    const login = 'ekspansjanormal@clorce.com.sebamaboxa';
+    const password = 'Clorce2@';
+  
 
-    await page.click('text=Log In to Sandbox');
-    await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
-    await page.type('#password', 'Clorce2@');
-    await page.click('text=Log In to Sandbox');
+
+    await page.goto(url);
+    await page.getByLabel('Username').click();
+    await page.getByLabel('Username').fill(login);
+    await page.getByLabel('Password').fill(password);
+    await page.getByRole('button', { name: 'Log In to Sandbox' }).click();
 
     test('błędny nr tel. komórkowy', async ({ page }) => {
       await page.click('text=Potencjalni klienci');
@@ -53,4 +59,3 @@ test.describe.parallel('CRM- Stworzenie Potencjalnego Klienta', () => {
       );
     });
   });
-});
