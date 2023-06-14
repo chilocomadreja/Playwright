@@ -259,3 +259,6 @@ Then use page in tests:
 =======
 # Playwright
 >>>>>>> 837a91abe21e9932c23ea2c90f3552b70d1cdc58
+
+#  komenda na waity 
+await page.waitForTimeout(15000);
