@@ -43,19 +43,23 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page.getByLabel('NIP').fill(nip);
   await page.getByLabel('Komentarz').fill(comment);
   await page.getByRole('combobox', { name: 'Typ sklepu, --Brak--' }).click();
-  await page.getByTitle('SPAR', { exact: true }).click();
+  await page.getByText('Corporate').click();
   await page
     .getByRole('combobox', { name: 'Typ potencjalnego klienta, --Brak--' })
     .click();
   await page.getByText('Działka').click();
+  await page.getByRole('combobox', { name: 'Format sklepu, --Brak--' }).click();
+  await page.getByText('SPAR', { exact: true }).click();
   await page
     .getByRole('combobox', { name: 'Powód odrzucenia, --Brak--' })
     .click();
-  await page.getByText('Za mały obiekt').click();
   await page
-    .getByRole('combobox', { name: 'Magazyn logistyczny, --Brak--' })
+    .getByRole('option', { name: 'Za mały obiekt' })
+    .locator('span')
+    .nth(1)
     .click();
-  await page.getByText('Czeladź').click();
+    await page.getByRole('combobox', { name: 'Magazyn logistyczny, --Brak--' }).click();
+    //await page.getByRole('option', { name: 'Czeladź' }).locator('span').nth(1).click();
   ///Kontakt dodatkowy
 
   ///Lokalizacja
@@ -83,8 +87,8 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   //await page.getByRole('combobox', { name: 'Środki finansowe, Własne' }).click();
 
   ///Informacje adresowe
-  await page.getByRole('combobox', { name: 'Województwo, --Brak--' }).click();
-  await page.getByText('Województwo lubuskie').click();
+  //await page.getByRole('combobox', { name: 'Województwo, --Brak--' }).click();
+  //await page.getByText('Województwo lubuskie').click();
   await page.getByLabel('Ulica').fill('cos');
   await page.getByLabel('Kod pocztowy').fill('31-444');
   await page.getByLabel('Miasto').fill('Lublin');

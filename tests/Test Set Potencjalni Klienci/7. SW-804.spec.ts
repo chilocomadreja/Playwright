@@ -43,7 +43,7 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page.getByLabel('NIP').fill(nip);
   await page.getByLabel('Komentarz').fill(comment);
   await page.getByRole('combobox', { name: 'Typ sklepu, --Brak--' }).click();
-  await page.getByTitle('SPAR', { exact: true }).click();
+  await page.getByText('Corporate').click();
   await page
     .getByRole('combobox', { name: 'Typ potencjalnego klienta, --Brak--' })
     .click();
@@ -55,7 +55,7 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page
     .getByRole('combobox', { name: 'Magazyn logistyczny, --Brak--' })
     .click();
-  await page.getByText('Czeladź').click();
+  //await page.getByText('Czeladź').click();
   ///Kontakt dodatkowy
 
   ///Lokalizacja
@@ -83,8 +83,8 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   //await page.getByRole('combobox', { name: 'Środki finansowe, Własne' }).click();
 
   ///Informacje adresowe
-  await page.getByRole('combobox', { name: 'Województwo, --Brak--' }).click();
-  await page.getByText('Województwo lubuskie').click();
+  //await page.getByRole('combobox', { name: 'Województwo, --Brak--' }).click();
+  //await page.getByText('Województwo lubuskie').click();
   await page.getByLabel('Ulica').fill('cos');
   await page.getByLabel('Kod pocztowy').fill('31-444');
   await page.getByLabel('Miasto').fill('Lublin');
@@ -102,11 +102,8 @@ test('Stworzenie nowego klienta', async ({ page }) => {
     .click();
   await page.getByRole('combobox', { name: 'Branża, --Brak--' }).click();
   await page.getByLabel('Opis').fill('lol');
- 
+
   await page.getByRole('button', { name: 'Zapisz i nowy element' }).click();
-
-
-
 
   await page.getByPlaceholder('Nazwisko').fill('Kowalski0206');
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
@@ -115,6 +112,4 @@ test('Stworzenie nowego klienta', async ({ page }) => {
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
   await page.getByRole('button', { name: 'Zapisz', exact: true }).click();
   await page.locator('records-modal-lwc-detail-panel-wrapper').click();
-
-
 });

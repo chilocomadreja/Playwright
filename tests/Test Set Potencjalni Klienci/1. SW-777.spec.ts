@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('weryfikacja PS - Delete records- tworzenie leada', async ({
-  page,
-}) => {
+test('weryfikacja PS - Delete records- tworzenie leada', async ({ page }) => {
   const url = 'https://test.salesforce.com/';
   const login = 'ekspansjadeleteb2b@clorce.com.sebamaboxa';
   const password = 'Clorce3@';
