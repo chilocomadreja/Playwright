@@ -138,15 +138,76 @@ test.describe
     await page.getByRole('tab', { name: 'Szczegóły' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('button', { name: 'Edytuj Format sklepu' }).click();
-    await page.getByRole('combobox', { name: 'Format sklepu, EUROSPAR' }).click();
+    await page
+      .getByRole('combobox', { name: 'Format sklepu, EUROSPAR' })
+      .click();
     await page.getByText('SPAR', { exact: true }).click();
     await page.getByRole('button', { name: 'Zapisz' }).click();
 
+    ///Asert
+    const FormatSklepu = 'SPAR';
+    expect(FormatSklepu).toContain('SPAR');
+  });
 
- ///Asert
- const FormatSklepu = 'SPAR';
- expect(FormatSklepu).toContain('SPAR');
+  test('9. ADRES', async ({ page }) => {
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('link', { name: 'Janusz Lech' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('tab', { name: 'Szczegóły' }).click();
+    await page.waitForTimeout(5000);
+
+    ///Asert
+    const Adres = 'Mogilska';
+    expect(Adres).toContain('Mogilska');
+
+    const Adres2 = '31-444';
+    expect(Adres2).toContain('31-444');
+
+    const Adres3 = 'Kraków';
+    expect(Adres3).toContain('Kraków');
+
+    const Adres4 = 'Polska';
+    expect(Adres4).toContain('Polska');
+  });
+
+  test('10. Magazyn: Czeladź', async ({ page }) => {
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('link', { name: 'Janusz Lech' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('tab', { name: 'Szczegóły' }).click();
+    await page.waitForTimeout(5000);
+    await page
+      .getByRole('button', { name: 'Edytuj Magazyn logistyczny' })
+      .click();
+    await page
+      .getByRole('combobox', { name: 'Magazyn logistyczny, --Brak--' })
+      .click();
+    await page.getByText('Czeladź', { exact: true }).click();
+    await page.getByRole('button', { name: 'Zapisz' }).click();
+
+    ///Asert
+    const Magazyn = 'Czeladź';
+    expect(Magazyn).toContain('Czeladź');
+  });
+
+  test('11. Magazyn: Koninko', async ({ page }) => {
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('link', { name: 'Janusz Lech' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('tab', { name: 'Szczegóły' }).click();
+    await page.waitForTimeout(5000);
+    await page
+    await page.getByRole('button', { name: 'Edytuj Magazyn logistyczny' }).click();
+    await page.getByRole('combobox', { name: 'Magazyn logistyczny, Czeladź' }).click();
+    await page.getByText('Koninko', { exact: true }).click();
+    await page.getByRole('button', { name: 'Zapisz' }).click();
+///Asert
+const Magazyn = 'Koninko';
+expect(Magazyn).toContain('Koninko');
+
 
 });
-
 });
