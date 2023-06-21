@@ -9,7 +9,7 @@ test.describe('Napisanie wiadomości w Chatter', () => {
     await page.click('text=Log In to Sandbox');
   });
 
-  test('Napisanie wiadomości', async ({ page }) => {
+  test('Wiadomość', async ({ page }) => {
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('link', { name: 'Janusz Lech' }).click();
@@ -22,34 +22,19 @@ test.describe('Napisanie wiadomości w Chatter', () => {
     await page.getByTitle('Kliknij lub naciśnij klawisze Ctrl i Enter').click();
   });
 
-  test('Załączenie pliku', async ({ page }) => {
+  test('wrzucenie pliku', async ({ page }) => {
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('link', { name: 'Janusz Lech' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('tab', { name: 'Chatter' }).click();
 
-    await page.click(
-      '.slds-file-selector__button.slds-button.slds-button_neutral'
-    );
-    // Wybierz plik
-    const input = await page.$('input[type=file]');
-    if (input === null) {
-      console.error('Nie znaleziono elementu input.');
+    await page.getByText('Załącz pliki z dysku', { exact: true }).click();
+    await page.getByLabel('Załącz pliki z dyskuLub upuść pliki');
 
-      return;
-    }
-    await input.setInputFiles('UploadItems/Serials.txt');
-    await page.waitForTimeout(2000);
+    const filePath = 'tests/UploadItems/Serials.txt';
+    await page.setInputFiles('input[type=file]', filePath);
 
-    // await page.getByText('Załącz pliki z dysku', { exact: true }).click();
-    // await page.getByLabel('Załącz pliki z dyskuLub upuść pliki');
-    // await page.setInputFiles(".slds-file-selector__button slds-button slds-button_neutral"),
-    // ["UploadItems/Serials.txt"])
-
-    //    await page.setInputFiles('.slds-file-selector__button.slds-button.slds-button_neutral']",
-    //  ["tests\UploadItems\Serials.txt"]);
-
-    //await page.getByRole('button', { name: 'Gotowe' }).click();
+    await page.getByRole('button', { name: 'Gotowe' }).click();
   });
 });
