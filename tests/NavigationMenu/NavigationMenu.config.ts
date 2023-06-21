@@ -36,7 +36,7 @@ export default defineConfig({
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 15000,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'http://test.salesforce.com',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
@@ -47,11 +47,11 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'], 
-    
-      viewport:{width:1926,height:955}
-    },
-      
+      use: {
+        ...devices['Desktop Chrome'],
+
+        viewport: { width: 1926, height: 955 },
+      },
     },
 
     // {

@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Menu: Finanse', () => {
+test.describe('Menu: Finanse', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
 
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'logistykatestb2b@clorce.com.sebamaboxa');

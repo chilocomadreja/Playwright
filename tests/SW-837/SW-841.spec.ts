@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe
-  .parallel('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
+test.describe('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce2@');

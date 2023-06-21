@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Napisanie wiadomości w Chatter', () => {
+test.describe('Napisanie wiadomości w Chatter', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce2@');
@@ -23,8 +23,6 @@ test.describe.parallel('Napisanie wiadomości w Chatter', () => {
   });
 
   test('Załączenie pliku', async ({ page }) => {
-  
-
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('link', { name: 'Janusz Lech' }).click();
@@ -36,11 +34,11 @@ test.describe.parallel('Napisanie wiadomości w Chatter', () => {
     );
     // Wybierz plik
     const input = await page.$('input[type=file]');
-  if (input === null) {
-    console.error('Nie znaleziono elementu input.');
-    
-    return;
-  }
+    if (input === null) {
+      console.error('Nie znaleziono elementu input.');
+
+      return;
+    }
     await input.setInputFiles('UploadItems/Serials.txt');
     await page.waitForTimeout(2000);
 

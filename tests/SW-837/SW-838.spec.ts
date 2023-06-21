@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Walidacja pól w formularzu Potencjalny Klient', () => {
+test.describe('Walidacja pól w formularzu Potencjalny Klient', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
 
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');

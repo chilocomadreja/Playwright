@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Login to sandbox', () => {
+test.describe('Login to sandbox', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
   });
 
   test('Show error message', async ({ page }) => {
@@ -40,8 +40,5 @@ test.describe.parallel('Login to sandbox', () => {
     await expect(page).toHaveURL(
       'https://spar--sebamaboxa.sandbox.my.salesforce.com/'
     );
-
-    
   });
-
 });

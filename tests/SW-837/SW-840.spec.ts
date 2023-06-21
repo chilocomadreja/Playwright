@@ -1,9 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe
-  .parallel('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
+test.describe('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce2@');
@@ -199,15 +198,17 @@ test.describe
     await page.waitForTimeout(5000);
     await page.getByRole('tab', { name: 'Szczegóły' }).click();
     await page.waitForTimeout(5000);
+    await page;
     await page
-    await page.getByRole('button', { name: 'Edytuj Magazyn logistyczny' }).click();
-    await page.getByRole('combobox', { name: 'Magazyn logistyczny, Czeladź' }).click();
+      .getByRole('button', { name: 'Edytuj Magazyn logistyczny' })
+      .click();
+    await page
+      .getByRole('combobox', { name: 'Magazyn logistyczny, Czeladź' })
+      .click();
     await page.getByText('Koninko', { exact: true }).click();
     await page.getByRole('button', { name: 'Zapisz' }).click();
-///Asert
-const Magazyn = 'Koninko';
-expect(Magazyn).toContain('Koninko');
-
-
-});
+    ///Asert
+    const Magazyn = 'Koninko';
+    expect(Magazyn).toContain('Koninko');
+  });
 });

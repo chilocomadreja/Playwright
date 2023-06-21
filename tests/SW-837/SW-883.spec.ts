@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.parallel('Widoczność zakłądek na POtencjalnym Kliencie', () => {
+test.describe('Widoczność zakłądek na POtencjalnym Kliencie', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('https://test.salesforce.com/');
+    await page.goto('/');
     await page.click('text=Log In to Sandbox');
     await page.type('#username', 'ekspansjanormal@clorce.com.sebamaboxa');
     await page.type('#password', 'Clorce2@');
