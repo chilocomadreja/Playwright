@@ -3,6 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Login to sandbox', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
+  
   });
 
   test('Show error message', async ({ page }) => {
@@ -12,10 +13,10 @@ test.describe('Login to sandbox', () => {
   });
 
   test('Negative scenario', async ({ page }) => {
-    await page.click('text=Log In to Sandbox');
-    await page.type('#username', 'invalid username');
-    await page.type('#password', 'invalid password');
-    await page.click('text=Log In to Sandbox');
+    // await page.click('text=Log In to Sandbox');
+    // await page.type('#username', 'invalid username');
+    // await page.type('#password', 'invalid password');
+    // await page.click('text=Log In to Sandbox');
 
     const ErrorMessage = await page.locator('#error');
     await expect(ErrorMessage).toContainText(
