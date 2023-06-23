@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.skip('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
+test.describe('Weryfikacja adresu oraz opcji wyboru w Typ sklepu i Forma sklepu', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.click('text=Log In to Sandbox');

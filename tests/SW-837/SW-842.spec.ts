@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.skip('Weryfikacja zaleceń gwarantujących sukces', () => {
+test.describe('Weryfikacja zaleceń gwarantujących sukces', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.click('text=Log In to Sandbox');

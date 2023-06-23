@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe.skip('Widoczność zakłądek na POtencjalnym Kliencie', () => {
+test.describe('Widoczność zakłądek na POtencjalnym Kliencie', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.click('text=Log In to Sandbox');
