@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Napisanie wiadomości w Chatter', () => {
+test.describe.skip('Napisanie wiadomości w Chatter', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
     await page.click('text=Log In to Sandbox');

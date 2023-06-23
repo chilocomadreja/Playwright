@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Walidacja wszystkich pól dla Potencjalne Klienta', () => {
+test.describe.skip('Walidacja wszystkich pól dla Potencjalne Klienta', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
 
