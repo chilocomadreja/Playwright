@@ -10,7 +10,7 @@ test.describe('Weryfikacja specjalnej grupy', () => {
     await page.click('text=Log In to Sandbox');
   });
 
-  test('Potencjalny Klient-utworzenie', async ({ page }) => {
+  test('1. Potencjalny Klient-utworzenie', async ({ page }) => {
     const projectNumber = '1234567';
     const firstName = 'Tomasz';
     const lastName = 'Lis';
@@ -116,7 +116,7 @@ test.describe('Weryfikacja specjalnej grupy', () => {
     await page.getByRole('button', { name: 'Zapisz', exact: true }).click();
   });
 
-  test('Chatter - wiadomość weryfikacja', async ({ page }) => {
+  test('2. Chatter - wiadomość weryfikacja', async ({ page }) => {
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('link', { name: 'Tomasz Lis' }).click();
@@ -132,7 +132,7 @@ test.describe('Weryfikacja specjalnej grupy', () => {
     expect(Opis).toContain('Nowy tekst do weryfikacji ążźćóęł');
   }); 
 
-  test('wrzucenie pliku', async ({ page }) => {
+  test('3. wrzucenie pliku', async ({ page }) => {
     await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
     await page.waitForTimeout(5000);
     await page.getByRole('link', { name: 'Tomasz Lis' }).click();
@@ -152,7 +152,7 @@ test.describe('Weryfikacja specjalnej grupy', () => {
 
   });
 
-  test('Grupa - sprawdzenie', async ({ page }) => {
+  test('4. Grupa - sprawdzenie', async ({ page }) => {
 
     await page.getByRole('button', { name: 'Pokaż więcej elementów nawigacji' }).click();
     await page.getByRole('menuitem', { name: 'Grupy' }).click();
