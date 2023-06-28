@@ -170,4 +170,21 @@ test.describe('Weryfikacja widoczności załączników cz. I', () => {
     const Plik = 'Test2.txt';
     expect(Plik).toContain('Test2.txt');
   });
+
+
+  test('5. widoczność 2 załączników', async ({ page }) => {
+    await page.getByRole('link', { name: 'Potencjalni klienci' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('link', { name: 'Karol Robak' }).click();
+    await page.waitForTimeout(5000);
+    await page.getByRole('tab', { name: 'Chatter' }).click();
+
+    const Plik2 = 'Test2.txt';
+    expect(Plik2).toContain('Test2.txt');
+
+    const Plik = 'Test1.txt';
+    expect(Plik).toContain('Test1.txt');
+
+  });
+
 });
