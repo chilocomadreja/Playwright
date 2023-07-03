@@ -11,17 +11,17 @@ test.describe('Weryfikacja specjalnej grupy', () => {
   });
 
   test('1. Potencjalny Klient-utworzenie', async ({ page }) => {
-    const projectNumber = '1234567';
+    const projectNumber = '565656';
     const firstName = 'Tomasz';
     const lastName = 'Lis';
-    const mobileNumber = '664324123';
-    const phoneNumber = '413522250';
-    const companyName = 'Fakty';
-    const email = 'test1@clorce.com';
-    const regon = '12345999';
-    const krs = '1234999';
-    const nip = '1234999';
-    const comment = 'To jest test';
+    const mobileNumber = '98765433';
+    const phoneNumber = '913522259';
+    const companyName = 'Fakty2';
+    const email = 'test1666@clorce.com';
+    const regon = '345432345';
+    const krs = '098675434';
+    const nip = '765389876';
+    const comment = 'To jest test12345';
 
     await page.click('text=Potencjalni klienci');
     await page.click('text=Nowy element');

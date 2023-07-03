@@ -11,17 +11,17 @@ test.describe('Widoczność zakładki Zadanie Z Załącznikiem', () => {
   });
 
   test('1. Potencjalny Klient-utworzenie', async ({ page }) => {
-    const projectNumber = '1234567';
+    const projectNumber = '098765444';
     const firstName = 'Amadeusz';
     const lastName = 'Ślepy';
-    const mobileNumber = '664324123';
+    const mobileNumber = '5021325673';
     const phoneNumber = '513522250';
-    const companyName = 'Jamniki';
-    const email = 'test1@clorce.com';
-    const regon = '12345999';
-    const krs = '1234999';
-    const nip = '1234999';
-    const comment = 'To jest test';
+    const companyName = 'Jamniki45';
+    const email = 'test109876@clorce.com';
+    const regon = '786354678';
+    const krs = '56789878786';
+    const nip = '34566788';
+    const comment = 'To jest test3434';
 
     await page.click('text=Potencjalni klienci');
     await page.click('text=Nowy element');

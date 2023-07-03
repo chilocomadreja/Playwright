@@ -11,17 +11,17 @@ test.describe('Weryfikacja widoczności załączników cz. I', () => {
   });
 
   test('1. Potencjalny Klient-utworzenie', async ({ page }) => {
-    const projectNumber = '1234567';
+    const projectNumber = '9876789';
     const firstName = 'Karol';
     const lastName = 'Robak';
-    const mobileNumber = '664324123';
+    const mobileNumber = '888777663';
     const phoneNumber = '313522250';
-    const companyName = 'Bakterie';
-    const email = 'test1@clorce.com';
+    const companyName = 'Bakterie789';
+    const email = 'test10987@clorce.com';
     const regon = '12345999';
-    const krs = '1234999';
-    const nip = '1234999';
-    const comment = 'To jest test';
+    const krs = '876767675';
+    const nip = '607867544';
+    const comment = 'To jest test09876';
 
     await page.click('text=Potencjalni klienci');
     await page.click('text=Nowy element');
