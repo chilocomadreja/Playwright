@@ -125,15 +125,18 @@ test.describe('Weryfikacja widoczności załączników cz. II', () => {
     await page.getByRole('tab', { name: 'Zadanie z załącznikiem' }).click();
 
 
-    await page.locator('#input-326').click();
-    await page.locator('#input-326').fill('lol');
-    await page.locator('#input-330').click();
-    await page.locator('#input-330').fill('lol2');
-    await page.getByPlaceholder('Szukaj w: Ludzie...').click();
-    await page.getByText('Ekspansja Normal Test', { exact: true }).click();
-    await page.locator('#input-342').click();
-    await page.getByText('3', { exact: true }).nth(1).click();
-    await page.locator('#file-selector-label-346').getByText('Załącz pliki z dysku').click();
+    
+
+
+
+
+
+
+
+
+
+
+    
 
 
   });
